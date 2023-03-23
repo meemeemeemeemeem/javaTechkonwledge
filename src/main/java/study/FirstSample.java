@@ -1,15 +1,8 @@
 package study;
 
 
-import java.io.Console;
-import java.io.IOException;
-import java.io.PrintWriter;
 import java.lang.System;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Path;
-import java.util.Date;
-import java.util.Formattable;
-import java.util.Scanner;
+import java.math.BigInteger;
 
 
 /**
@@ -18,11 +11,10 @@ import java.util.Scanner;
  */
 public class FirstSample {
 
-    public static void main(String[] args)  {
-
-        int n ; {
-             n=1 ;
-            int k;
-        }
+    public static void main(String[] args) {
+        int[] smallPrimes={2,3,5,7,11,13,};
+        System.out.println(smallPrimes);
     }
+
+
 }
