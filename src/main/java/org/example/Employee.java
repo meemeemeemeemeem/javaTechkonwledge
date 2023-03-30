@@ -1,6 +1,7 @@
 package org.example;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 /**
  * @Author mei
@@ -9,16 +10,19 @@ import java.time.LocalDate;
 public class Employee {
     private String name ;
     private LocalDate hireDay;
-    private double s;
+    private double salary;
     public Employee(String n,double salary,int year,int month ,int day){
-        this.name=n;
-        s=salary;
+        name= Objects.requireNonNull(n,"the name can not be null");
+        this.salary=salary;
         hireDay=LocalDate.of(year, month,day);
+    }
 
+    public void raiseSalary (double byPercent){
+        double raise = salary*byPercent/100;
+        salary+=raise;
     }
 
     public Employee() {
-
     }
 
     public String getName() {
@@ -37,11 +41,12 @@ public class Employee {
         this.hireDay = hireDay;
     }
 
-    public double getS() {
-        return s;
+
+    public double getSalary() {
+        return salary;
     }
 
-    public void setS(double s) {
-        this.s = s;
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
 }
