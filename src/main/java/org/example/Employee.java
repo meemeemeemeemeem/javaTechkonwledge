@@ -30,17 +30,11 @@ public class Employee {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public LocalDate getHireDay() {
         return hireDay;
     }
 
-    public void setHireDay(LocalDate hireDay) {
-        this.hireDay = hireDay;
-    }
 
     public double getSalary() {
         return salary;
