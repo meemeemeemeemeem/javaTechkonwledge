@@ -8,18 +8,19 @@ import java.util.Objects;
  * @create 2023/3/29 16:41
  */
 public class Employee {
-    private String name ;
+    private String name;
     private LocalDate hireDay;
     private double salary;
-    public Employee(String n,double salary,int year,int month ,int day){
-        name= Objects.requireNonNull(n,"the name can not be null");
-        this.salary=salary;
-        hireDay=LocalDate.of(year, month,day);
+
+    public Employee(String n, double salary, int year, int month, int day) {
+        name = Objects.requireNonNull(n, "the name can not be null");
+        this.salary = salary;
+        hireDay = LocalDate.of(year, month, day);
     }
 
-    public void raiseSalary (double byPercent){
-        double raise = salary*byPercent/100;
-        salary+=raise;
+    public void raiseSalary(double byPercent) {
+        double raise = this.salary * byPercent / 100;
+        this.salary += raise;
     }
 
     public Employee() {
@@ -40,7 +41,6 @@ public class Employee {
     public void setHireDay(LocalDate hireDay) {
         this.hireDay = hireDay;
     }
-
 
     public double getSalary() {
         return salary;
