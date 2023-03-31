@@ -14,6 +14,8 @@ public class Employee {
     private double salary;
     private final Date date;
     private static int nextid;
+    public  final double PI=3.1415926;
+    private final StringBuilder stringBuilder;
 
 
     public Employee(String n, double salary, int year, int month, int day) {
@@ -21,8 +23,10 @@ public class Employee {
         this.salary = salary;
         this.hireDay = LocalDate.of(year, month, day);
         this.date=new Date();
+        this.stringBuilder=new StringBuilder();
         nextid++;
     }
+
 
     public static int getNextid() {
         return nextid;
