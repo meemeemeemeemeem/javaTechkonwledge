@@ -1,7 +1,5 @@
 package study;
 
-
-import java.security.spec.NamedParameterSpec;
 import java.util.Random;
 
 /**
