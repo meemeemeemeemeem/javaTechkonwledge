@@ -41,7 +41,8 @@ class EmployeeT{
         var generator = new Random();
         nextId = generator.nextInt(10000);
         System.out.println(nextId);
-    }
+
+     }
     {
         id = nextId;
         nextId++;

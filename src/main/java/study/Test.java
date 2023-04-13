@@ -7,7 +7,6 @@ import java.util.Random;
  * @create 2023/1/9 11:32
  */
 public class Test {
-
     public static void main(String[] args) {
         Student student = new Student();
         int i = 1;
