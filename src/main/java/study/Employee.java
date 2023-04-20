@@ -33,4 +33,8 @@ public class Employee {
         double raise = this.salary * byPercent / 100;
         this.salary += raise;
     }
+
+    public Employee get(){
+        return this;
+    }
 }

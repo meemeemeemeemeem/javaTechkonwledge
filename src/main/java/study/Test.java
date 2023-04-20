@@ -6,7 +6,12 @@ package study;
  */
 public class Test {
     public static void main(String[] args) {
-        var boss = new Manager("Carl Cracker", 80000, 1987, 12, 14);
+        Manager[]managers=new Manager[10];
+        Employee[]staff = managers;
+        System.out.println(staff[0].getClass().getName());
+
+        staff[0]=new Employee("Harry ",5000,1988,10,12);
+        managers[0].setBonus(12);
 
     }
 
