@@ -1,6 +1,7 @@
 package study;
 
 import java.time.LocalDate;
+import java.util.Objects;
 
 /**
  * @author mei
@@ -29,12 +30,24 @@ public class Employee {
         return hireDay;
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null) return false;
+        if (this.getClass() != obj.getClass()) return false;
+        Employee other = (Employee) obj;
+        return Objects.equals(this.getHireDay(), other.getHireDay())
+                &&
+                Objects.equals(this.getName(),other.getName())
+                &&
+                this.salary==other.salary;
+    }
+
+
+
     public void raiseSalary(double byPercent) {
         double raise = this.salary * byPercent / 100;
         this.salary += raise;
     }
 
-    public Employee get(){
-        return this;
-    }
 }

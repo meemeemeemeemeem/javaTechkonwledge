@@ -19,7 +19,7 @@ public class Manager extends Employee {
     }
 
     @Override
-    public Manager get() {
-        return this;
+    public boolean equals(Object obj) {
+        return obj.getClass() == this.getClass();
     }
 }
