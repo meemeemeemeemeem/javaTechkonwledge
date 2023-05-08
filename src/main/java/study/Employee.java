@@ -1,6 +1,7 @@
 package study;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -43,7 +44,18 @@ public class Employee {
                 this.salary==other.salary;
     }
 
+    @Override
+    public int hashCode() {
+        return 7*Objects.hashCode(name)+11*Double.hashCode(salary)+13*Objects.hashCode(hireDay);
+    }
 
+    @Override
+    public String toString() {
+        return this.getClass().getName()+
+                "[name="+this.name+","+
+                "salaty="+this.salary+","+
+                "hireDay="+this.hireDay+"]";
+    }
 
     public void raiseSalary(double byPercent) {
         double raise = this.salary * byPercent / 100;

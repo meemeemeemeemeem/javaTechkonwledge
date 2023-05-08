@@ -1,11 +1,6 @@
 package study;
 
-import java.io.BufferedInputStream;
-import java.io.InputStream;
-import java.sql.Timestamp;
-import java.util.Date;
-import java.util.Objects;
-import java.util.Scanner;
+import java.util.Arrays;
 
 /**
  * @author mei
@@ -13,9 +8,10 @@ import java.util.Scanner;
  */
 public class Test {
     public static void main(String[] args) {
+        int[] number = new int[]{2,3,4,5};
 
-        String t= "Hello";
-        System.out.println(t.hashCode());
+        System.out.println(        Arrays.toString(number)
+        );
 
     }
 }
