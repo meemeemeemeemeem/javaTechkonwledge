@@ -1,4 +1,4 @@
-package study;
+package abstractperson;
 
 /**
  * @author mei

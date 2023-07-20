@@ -242,3 +242,42 @@ class Person {
 
 如果标注了@Valid, 那么当主对象被校验的时候,这些集合对象中的元素都会被校验.
 
+当校验一个Car的实例的时候,如果passengers list中包含的任何一个Person对象没有名字的话,都会导致校验失败
+
+
+### 2.2.1. 获取一个Validator的实例
+对一个实体对象验证之前首先需要有个Validator对象, 而这个对象是需要通过Validation 类和 ValidatorFactory来创建的. 
+最简单的方法是调用Validator validator=Validation.buildDefaultValidatorFactory() 这个静态方法.
+
+
+### 2.2.2. Validator中的方法
+Validator中有三个方法能够被用来校验整个实体对象或者实体对象中的属性.
+
+这三个方法都会返回一个Set<ConstraintViolation>对象, 如果整个验证过程没有发现问题的话,那么这个set是空的, 
+否则, 每个违反约束的地方都会被包装成一个ConstraintViolation的实例然后添加到set当中.
+
+所有的校验方法都接收零个或多个用来定义此次校验是基于哪个校验组的参数. 如果没有给出这个参数的话, 那么此次校验将会基于默认的校验组 (javax.validation.groups.Default). 
+
+#### 2.2.2.1. validate
+
+使用validate()方法对一个给定的实体对象中定义的所有约束条件进行校验
+`Set<ConstraintViolation<Car>> constraintViolations = validator.validate(car);`
+
+#### 2.2.2.2. validateProperty
+通过validateProperty()可以对一个给定实体对象的单个属性进行校验. 其中属性名称需要符合JavaBean规范中定义的属性名称.
+`Set<ConstraintViolation<Car>> constraintViolations = validator.validateProperty(car, "manufacturer");`
+
+#### 2.2.2.3. validateValue
+`Set<ConstraintViolation<Car>> constraintViolations = validator.validateValue(Car.class, "manufacturer", null);`
+
+### 2.2.3. ConstraintViolation 中的方法
+| 方法名	                        | 作用	                                                                           | 示例                                             |
+|-----------------------------|-------------------------------------------------------------------------------|------------------------------------------------|
+| getMessage()	               | 获取(经过翻译的)校验错误信息	                                                              | “不能为空”                                         |
+| getMessageTemplate()	       | 获取错误信息模版	                                                                     | {javax.validation.constraints.NotNull.message} |
+| getRootBean()	              | 获取被校验的根实体对象	                                                                  | car                                            |
+| getRootBeanClass()	         | 获取被校验的根实体类.	                                                                  | Car.class                                      |
+| getLeafBean()	              | 如果约束是添加在一个bean(实体对象)上的,那么则返回这个bean的实例, 如果是约束是定义在一个属性上的, 则返回这个属性所属的bean的实例对象.	 |                                                |
+| getPropertyPath()	          | 从被验证的根对象到被验证的属性的路径.	                                                          |                                                |
+| getInvalidValue()	          | 校验失败的值                                                                        | passengers                                     |
+| getConstraintDescriptor()		 | 导致校验失败的约束定义.	                                                                 |                                                |

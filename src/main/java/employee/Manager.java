@@ -1,10 +1,16 @@
-package study;
+package employee;
+
+import employee.Employee;
 
 /**
  * @author mei
  * @since 2023/4/19 16:34
  */
 public class Manager extends Employee {
+    public double getBonus() {
+        return bonus;
+    }
+
     private double bonus;
     public Manager(String name, double salary, int year, int month, int day) {
         super(name, salary, year,month,day);

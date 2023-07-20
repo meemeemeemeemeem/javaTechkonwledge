@@ -1,7 +1,6 @@
-package study;
+package employee;
 
 import java.time.LocalDate;
-import java.util.Arrays;
 import java.util.Objects;
 
 /**
@@ -17,6 +16,10 @@ public class Employee {
         this.name = name;
         this.salary = salary;
         this.hireDay = LocalDate.of(year, month, day);
+    }
+
+    protected String gett(){
+        return "1";
     }
 
     public String getName() {
