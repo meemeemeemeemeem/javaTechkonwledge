@@ -12,6 +12,7 @@ import java.lang.reflect.Method;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Comparator;
+import java.util.function.Consumer;
 
 /**
  * @author mei
@@ -26,7 +27,7 @@ public class Test extends Employee{
 
 
     public static void main(String[] args)  {
-        Comparator<String>comparator= Comparator.comparingInt(String::length);
+
         Employee employee=new Employee("h",5000);
         int[] clone = new int[]{1, 2}.clone();
 
